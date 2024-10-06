@@ -11,6 +11,7 @@ import (
 
 func ConsumeNotificationMessages(cnfg *config.Config) {
 	conn, err := amqp091.Dial("amqp://guest:guest@localhost:5672")
+	log.Println("Connected to rabbitMQ")
 	if err != nil {
 		log.Fatalf("Failed to connect to RabbitMQ: %v", err)
 	}
